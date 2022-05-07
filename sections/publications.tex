@@ -1,0 +1,14 @@
+% https://www.hansenlab.org/cv_bibliography_tex
+
+\documentclass[letter, 12pt]{article}
+\usepackage[backend=biber,
+           bibstyle=numeric,sorting=ydnt,sortcites=true,natbib=true,defernumbers=true,
+           maxbibnames=99,giveninits=true,uniquename=false]{biblatex}
+\addbibresource{publications.bib}
+
+\begin{document}
+
+\nocite{Green:2021hjh}
+\printbibliography[heading=none]
+
+\end{document}

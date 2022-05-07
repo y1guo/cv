@@ -1,0 +1,60 @@
+\documentclass[letter,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[inline]{enumitem}
+
+\usepackage{TLCresume}
+
+%====================
+% Packages needed by citing publications
+\usepackage[backend=biber,style=authoryear,sorting=nyt,
+	natbib=true,maxbibnames=99,giveninits=true,uniquename=false]{biblatex}
+
+\addbibresource{publications.bib}
+%====================
+
+
+%====================
+% CONTACT INFORMATION
+%====================
+\def\name{Yi Guo} % Name Here
+\def\phone{(805)895-0554}
+\def\addressLineOne{3813 Camino Lindo}
+\def\addressLineTwo{San Diego, CA, 92122}
+\def\email{yiguo@physics.ucsd.edu}
+\def\website{https://y1guo.github.io}
+\def\LinkedIn{y1guo} % linkedin.com/in/______
+\def\github{y1guo} % github username
+\def\role{Theoretical Physicist} % JOB TITLE
+
+
+\input{_header}
+%\input{_headerBasic}
+
+
+\begin{document}
+
+\vspace*{60pt}
+
+%\input{sections/objective}
+
+\section{Education}
+\input{sections/education}
+
+\section{Skills}
+\input{sections/skills}
+
+\section{Academic Research}
+\input{sections/research}
+
+\section{Work Experience}
+\input{sections/work}
+
+\section{Software Development Projects}
+\input{sections/projects}
+
+\section{Publications}
+\input{sections/publications}
+
+\thispagestyle{empty}
+
+\end{document}
