@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1651906560 "/Users/yiguo/GitHub/cv/cv.tex" "build/cv.pdf" "cv" 1651906561
-  "/Users/yiguo/GitHub/cv/cv.tex" 1651906560 7639 e16614041740e07686d204a0df816a3f ""
+["pdflatex"] 1651917014 "/Users/yiguo/GitHub/cv/cv.tex" "build/cv.pdf" "cv" 1651917014
+  "/Users/yiguo/GitHub/cv/cv.tex" 1651917013 9177 9fdc670f2b2ec0fe766b4df39f250112 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -62,6 +62,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def" 1601931164 19103 48d29b6e2a64cb717117ef65f107b404 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty" 1639603921 7197 eb6c1ebf41667a05cb50c23c19d5e8bc ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/dvipsnam.def" 1622581934 4995 8040f614c8de8318a0b5b2dea8a3fcef ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty" 1622581934 2671 4de6781a30211fe0ea4c672e4a2a8166 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty" 1580250785 17914 4c28a13fc3d975e6e81c9bea1d697276 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def" 1645564115 49029 7c9e5115b2217efbeb7828ac0d1bf1a0 ""
@@ -88,9 +89,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651225605 2826449 e1802b39f741890553821932711efbb9 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "build/cv.aux" 1651906561 1356 16f45e2bd719f734cf07ba4024967eda "pdflatex"
-  "build/cv.out" 1651906561 710 274f133ce6b8d51443d22242094d395b "pdflatex"
-  "cv.tex" 1651906560 7639 e16614041740e07686d204a0df816a3f ""
+  "build/cv.aux" 1651917014 1497 e7e88486c801277dfef84c17949b43f8 "pdflatex"
+  "build/cv.out" 1651917014 994 f845811b8d572d5406424e7b9394b225 "pdflatex"
+  "cv.tex" 1651917013 9177 9fdc670f2b2ec0fe766b4df39f250112 ""
   (generated)
   "build/cv.aux"
   "build/cv.log"

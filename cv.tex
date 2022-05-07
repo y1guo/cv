@@ -8,7 +8,7 @@
 \usepackage{mathptmx}
 
 % colors
-\usepackage{xcolor} 
+\usepackage[dvipsnames]{xcolor} 
 \definecolor{darkblue}{RGB}{61, 90, 128} 
 
 % enables hyperlink and set link color
@@ -41,6 +41,7 @@
 % custom commands
 \newcommand{\previousversion}[1]{{\color{gray} [Old Version] #1}}
 \newcommand{\keepornot}[1]{{\color{red} #1 [Keep?]}}
+\newcommand{\comment}[1]{{\color{Green} [Comment] #1}}
 
 
 
@@ -72,17 +73,17 @@
 
 \textbf{University of California, San Diego} \hfill La Jolla, CA \\
 \begin{tabular}{p{10em} p{20em}}
-\textit{Ph.D. Physics} 
-& Physics Excellence Award 
+    \textit{Ph.D. Physics} 
+    & Physics Excellence Award 
 \end{tabular}
 \hfill Sep 2018 -- Expected Jun 2023
 
 \textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
 \begin{tabular}{p{10em} p{20em}}
-\textit{B.S. Physics}
-& Academic Honors, Worster Fellowship \\
-\textit{B.S. Mathematics}
-&
+    \textit{B.S. Physics}
+    & Academic Honors, Worster Fellowship \\
+    \textit{B.S. Mathematics}
+    &
 \end{tabular}
 \hfill Sep 2014 -- Jun 2018
 
@@ -98,51 +99,79 @@
     & Data Visualization, Parallel Computing, Monte Carlo Simulation, \\
     & Non-linear Regression, Machine Learning Classification \\
     \textbf{Miscellaneous} 
-    & Video Editing, Image Processing
+    & Video Editing, Image Processing, Photography
 \end{tabular}
 
 
 
 \section{Academic Research}
-\textbf{University of California San Diego} \hfill La Jolla, CA, Dec 2019 -- Present \\
-Research Assistent \\
+\textbf{University of California San Diego} \hfill La Jolla, CA \\
+Research Assistent \hfill Dec 2019 -- Present \\
 \begin{zitemize}
-\item Ongoing. Studying the forecast of primordial non-Gaussianities with the input from kinetic Sunyaev Zel’dovich (kSZ) effect on future Cosmic Microwave Background (CMB) and Large Scale Structure (LSS) surveys, despite problems and misleading contents from the literature. Aiming to improve the forecast by adding scale dependent bias and more realistic modeling such as multiple redshift binning, including bulk flows, and considering redshift space distortions, etc.
-\item Forecasted the experimental sensitivities of cosmological parameters from future surveys about the CMB and LSS. Initiated clean code reusable for future fisher matrix forecasting projects. 
-\item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. Reached the best accuracy so far by doing the exact integral instead of coarse approximations. To tackle the five dimensional integral, I used Mathematica to get the analytic solution of one integral, and did the rest four numerically. Numba was used to speed up the prototyping Python code by a factor of 100 - 1000, leaving space for even higher accuracy as well as saving cost on the cluster. Work published on JCAP.
-\item Calculated the neutrino dominated phase shift in the CMB anisotropy spectrum. Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.
+    \item Reproduced the recent forecast of primordial non-Gaussianities with the input from the kinetic Sunyaev Zel'dovich (kSZ) effect on future Cosmic Microwave Background (CMB) and Large Scale Structure (LSS) surveys, despite problems and misleading contents from the literature. Aiming to improve the forecast by adding scale dependent bias and more realistic modeling such as multiple redshift binning, including bulk flows, and considering redshift space distortions, etc.
+    \item Forecasted the experimental sensitivities of cosmological parameters from future surveys about the CMB and LSS. Initiated clean code reusable for future fisher matrix forecasting projects. 
+    \item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. Reached the best accuracy so far by doing the exact integral instead of approximations. To tackle the five dimensional integral, Mathematica was used to get the analytic result of one dimension, leaving the rest four done numerically. Numba was used to speed up the already parallel Python code by more than 100X, saving computation time as well as cost on the cluster. Work published on JCAP.
+    \item Calculated the neutrino dominated phase shift in the CMB anisotropy spectrum. \keepornot{Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.} \comment{Don't know how to explain this project.}
 \end{zitemize}
 
-\textbf{University of California Santa Barbara} \hfill Isla Vista, CA, Sep 2015 -- Jun 2017 \\
-Student Researcher \\
+\textbf{University of California Santa Barbara} \hfill Isla Vista, CA \\
+Student Researcher \hfill Sep 2015 -- Jun 2017 \\
 \begin{zitemize}
-\item Developed a package for rapid stellar spectrum analysis, incorporating Fortran for performance hungry computation and Python for user interface and mild analysis, with F2PY as the bridge between these two languages. Utilizing Levenberg–Marquardt algorithm for non-linear fitting, Markov chain Monte Carlo for error estimation, and with carefully designed user interface automation, it helped speed up traditional spectrum fitting by more than 10X. \previousversion{Developed LMFIT, a numerical package incorporating Python for UI/graphics and Fortran for scientific computation. Supports fast and intuitive galaxy spectrum fitting and Monte Carlo analysis, turning days of work into hours.}
-\item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for astronomical photos. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation. Reduced the work of repeating the same procedure hundreds of times by writing shell scripts to auto-locate the targets and run the programmed measurement. \previousversion{Measured the photometry of 52 galaxy mergers from raw data with C++, shell script and IRAF.}
-\item Measured the gas kinematics and thermal behaviors of 28 galaxy mergers of redshift 0.1 with the package I developed. Found that most of them (25) are blowing gas away, and only few (3) are inhaling, confirming theoretical predictions. Presented on UCSB undergraduate symposium and Worster Symposium.
+    \item Measured the gas kinematics and thermal behaviors of 28 galaxy mergers of redshift 0.1 with the package I developed. Found that most of them (25) are blowing gas away, and only few (3) are inhaling, confirming theoretical predictions. Presented on UCSB undergraduate symposium and Worster Symposium.
+    \item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for telescope images. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation, by infering syntax from bash, tcsh, C, etc. Reduced the work of repeating the same procedure hundreds of times by writing C programs and shell scripts to auto-locate the targets and run the measurement scripts automatically.
 \end{zitemize}
 
 
 
 \section{Work Experience}
 
-\textbf{University of California San Diego} \hfill La Jolla, CA, Oct 2018 -- Present \\
-Teaching Assistant
+\textbf{University of California San Diego} \hfill La Jolla, CA \\
+Teaching Assistant \hfill Oct 2018 -- Present \\
+Notable courses:
 \begin{zitemize}
-\item TA of Computational Physics I: Probabilistic Models and Simulations. \\
-Taught N-body simulation algorithms from $O(N^2)$, $O(NlogN)$, to $O(N)$.
-\item TA of Computational Physics II: PDE and Matrix Models. \\
-Numerical simulation of quantum mechanics using the path integral formulation.
-\item Reviewed as "Excellent" by the instructor.
+    \item TA of Computational Physics I: Probabilistic Models and Simulations. \\
+    Simulated galaxy collisions with 1 million particles, exported into videos. \\
+    Taught N-body simulation algorithms from $O(N^2)$, $O(NlogN)$ to $O(N)$ to students.
+    \item TA of Computational Physics II: PDE and Matrix Models. \\
+    Simulated various quantum experiments on classical computers using the path integral formulation.
+    \item Lectured on data visualization and matrix operations using Jupyter notebook.
+    \item Reviewed as "Excellent" by the instructor.
 \end{zitemize}
 
 
 
 \section{Software Development Projects}
 
-\textbf{Personal Assistant Web App} \hfill Apr 2022 -- May 2022
-Javscript, React, Material UI, Firebase
+\textbf{Web Application -- Personal Task Management System} \hfill Apr 2022 -- May 2022 \\
 \begin{zitemize}
-\item to be added
+    \item Developed a Progressive Web App for personal task tracking purpose.
+    \item Constructed Firestore database to store user tasks and built the login system with OAuth2.
+    \item Designed and built the frontend with React and Material UI to allow users edit and browse tasks, ranked by priority. Wrapped the website into PWA, which can be installed on Desktop and Mobile devices.
+    \item Users can take notes and set time, deadline and repeat for individual tasks. Can also access settings like switching to dark mode.
+    \item Continuously integrating more features with a calender system.
+\end{zitemize}
+
+\textbf{Scientific Calculation -- Package for Astronomical Spectrum Analysis} \hfill Sep 2015 -- Jun 2016 \\
+\begin{zitemize}
+    \item Developed a package for rapid galactic spectrum analysis.
+    \item Incorporated the best of two worlds: Fortran for performance hungry computation and Python for user interface and data visualization. Used F2PY as the bridge between these two languages.
+    \item Utilizing Levenberg-Marquardt algorithm for non-linear fitting, Markov chain Monte Carlo for error estimation, and with handy automation from the user interface, it helped speed up traditional spectrum fitting by more than 10X. 
+    \item Well documented with user manual.
+\end{zitemize}
+
+
+
+\section{Projects That I Believe Is Not Worth Talking}
+
+\textbf{Network -- Personal Cluster}
+\begin{zitemize}
+    \item Built a small cluster consisting of a macbook master and 3 PC workers. Connected via either OpenMP or Ray.
+    \item Networked by a soft router running Pfsense, with customized NAT and rules, connecting machines with LAN and virtual machines with OpenVPN.
+\end{zitemize}
+
+\textbf{Tool -- Bilibili Live Stream Recorder}
+\begin{zitemize}
+    \item Built a live stream recorder using Python. Ran on a server 24/7 and pushes email notifications on disk full.
 \end{zitemize}
 
 
