@@ -1,0 +1,160 @@
+\documentclass[letterpaper,12pt]{article}
+
+% set margins
+\usepackage[letterpaper, margin=.5in]{geometry}
+\raggedright % prevent the indent that starts from the second paragraph in each section
+
+% set font to Times
+\usepackage{mathptmx}
+
+% colors
+\usepackage{xcolor} 
+\definecolor{darkblue}{RGB}{61, 90, 128} 
+
+% enables hyperlink and set link color
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true, urlcolor=darkblue}
+
+% enables itemize
+\usepackage[inline]{enumitem}
+
+% tighter spacing than itemize
+\setlist[itemize]{align=parleft,left=0pt..1em}
+\newenvironment{zitemize}{
+\begin{itemize} \vspace{-.9em}\itemsep 0pt \parskip 0pt}
+{\end{itemize}\vspace{-.5em}}
+
+% set table left padding to 0
+\setlength{\tabcolsep}{0pt}
+
+% section formatting
+\usepackage[nostruts]{titlesec}
+\titlespacing*{\section}{0em}{0.5em}{0em} % margin left, top, bottom
+\titleformat{\section}{\color{darkblue} \scshape \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
+
+% tighter spacing than itemize
+% \setlist[itemize]{align=parleft,left=0pt..1em}
+% \newenvironment{zitemize}{
+% \begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
+% {\end{itemize}\vspace{-.5em}}
+
+% custom commands
+\newcommand{\previousversion}[1]{{\color{gray} [Old Version] #1}}
+\newcommand{\keepornot}[1]{{\color{red} #1 [Keep?]}}
+
+
+
+\begin{document}
+
+% profile
+\newcommand{\name}{Yi Guo}
+\newcommand{\phone}{(805)895-0554}
+\newcommand{\email}{yiguo@physics.ucsd.edu}
+\newcommand{\address}{3813 Camino Lindo, San Diego, CA, 92122}
+\newcommand{\github}{y1guo}
+\newcommand{\linkedin}{y1guo}
+\newcommand{\website}{https://y1guo.github.io}
+
+\begin{center}
+    \Huge \name \\
+    \vspace{1pt}
+    \small \phone 
+    $|$ \href{mailto:\email}{\underline{\email}} 
+    $|$ \address
+    % $|$ \href{https://www.linkedin.com/in/\linkedin}{\underline{LinkedIn/\linkedin}} 
+    % $|$ \href{https://github.com/\github}{\underline{Github/\github}} 
+    % $|$ \href{\website}{\underline{Home Page}}
+    \vspace{-15pt}
+\end{center}
+
+
+\section{Education}
+
+\textbf{University of California, San Diego} \hfill La Jolla, CA \\
+\begin{tabular}{p{10em} p{20em}}
+\textit{Ph.D. Physics} 
+& Physics Excellence Award 
+\end{tabular}
+\hfill Sep 2018 -- Expected Jun 2023
+
+\textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
+\begin{tabular}{p{10em} p{20em}}
+\textit{B.S. Physics}
+& Academic Honors, Worster Fellowship \\
+\textit{B.S. Mathematics}
+&
+\end{tabular}
+\hfill Sep 2014 -- Jun 2018
+
+
+\section{Skills}
+
+\begin{tabular}{p{10em} p{33em}}
+    \textbf{Languages and Tools} 
+    & Python, C/C++, Fortran, Mathematica, Matlab, Markdown, \LaTeX, Git, Docker \\
+    \textbf{Web Development}
+    & Javascript, HTML, CSS, MySQL, React, Firebase \\
+    \textbf{Quantitative Research} 
+    & Data Visualization, Parallel Computing, Monte Carlo Simulation, \\
+    & Non-linear Regression, Machine Learning Classification \\
+    \textbf{Miscellaneous} 
+    & Video Editing, Image Processing
+\end{tabular}
+
+
+
+\section{Academic Research}
+\textbf{University of California San Diego} \hfill La Jolla, CA, Dec 2019 -- Present \\
+Research Assistent \\
+\begin{zitemize}
+\item Ongoing. Studying the forecast of primordial non-Gaussianities with the input from kinetic Sunyaev Zel’dovich (kSZ) effect on future Cosmic Microwave Background (CMB) and Large Scale Structure (LSS) surveys, despite problems and misleading contents from the literature. Aiming to improve the forecast by adding scale dependent bias and more realistic modeling such as multiple redshift binning, including bulk flows, and considering redshift space distortions, etc.
+\item Forecasted the experimental sensitivities of cosmological parameters from future surveys about the CMB and LSS. Initiated clean code reusable for future fisher matrix forecasting projects. 
+\item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. Reached the best accuracy so far by doing the exact integral instead of coarse approximations. To tackle the five dimensional integral, I used Mathematica to get the analytic solution of one integral, and did the rest four numerically. Numba was used to speed up the prototyping Python code by a factor of 100 - 1000, leaving space for even higher accuracy as well as saving cost on the cluster. Work published on JCAP.
+\item Calculated the neutrino dominated phase shift in the CMB anisotropy spectrum. Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.
+\end{zitemize}
+
+\textbf{University of California Santa Barbara} \hfill Isla Vista, CA, Sep 2015 -- Jun 2017 \\
+Student Researcher \\
+\begin{zitemize}
+\item Developed a package for rapid stellar spectrum analysis, incorporating Fortran for performance hungry computation and Python for user interface and mild analysis, with F2PY as the bridge between these two languages. Utilizing Levenberg–Marquardt algorithm for non-linear fitting, Markov chain Monte Carlo for error estimation, and with carefully designed user interface automation, it helped speed up traditional spectrum fitting by more than 10X. \previousversion{Developed LMFIT, a numerical package incorporating Python for UI/graphics and Fortran for scientific computation. Supports fast and intuitive galaxy spectrum fitting and Monte Carlo analysis, turning days of work into hours.}
+\item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for astronomical photos. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation. Reduced the work of repeating the same procedure hundreds of times by writing shell scripts to auto-locate the targets and run the programmed measurement. \previousversion{Measured the photometry of 52 galaxy mergers from raw data with C++, shell script and IRAF.}
+\item Measured the gas kinematics and thermal behaviors of 28 galaxy mergers of redshift 0.1 with the package I developed. Found that most of them (25) are blowing gas away, and only few (3) are inhaling, confirming theoretical predictions. Presented on UCSB undergraduate symposium and Worster Symposium.
+\end{zitemize}
+
+
+
+\section{Work Experience}
+
+\textbf{University of California San Diego} \hfill La Jolla, CA, Oct 2018 -- Present \\
+Teaching Assistant
+\begin{zitemize}
+\item TA of Computational Physics I: Probabilistic Models and Simulations. \\
+Taught N-body simulation algorithms from $O(N^2)$, $O(NlogN)$, to $O(N)$.
+\item TA of Computational Physics II: PDE and Matrix Models. \\
+Numerical simulation of quantum mechanics using the path integral formulation.
+\item Reviewed as "Excellent" by the instructor.
+\end{zitemize}
+
+
+
+\section{Software Development Projects}
+
+\textbf{Personal Assistant Web App} \hfill Apr 2022 -- May 2022
+Javscript, React, Material UI, Firebase
+\begin{zitemize}
+\item to be added
+\end{zitemize}
+
+
+
+\section{Publications}
+
+D.~Green, \textbf{Y.~Guo} and B.~Wallisch,
+``Cosmological implications of axion-matter couplings,''
+In: \textit{JCAP} 02.02, p. 019 (2022)
+DOI: \href{https://iopscience.iop.org/article/10.1088/1475-7516/2022/02/019}{10.1088/1475-7516/2022/02/019}
+arXiv: \href{https://arxiv.org/abs/2109.12088?context=hep-ph}{2109.12088 [astro-ph.CO].}
+
+
+
+\end{document}
