@@ -34,9 +34,10 @@
 
 % custom commands
 \newcommand{\previousversion}[1]{{\color{gray} [Old Version] #1}}
-\newcommand{\keepornot}[1]{{\color{red} #1 [Keep?]}}
+\newcommand{\keepornot}[1]{{\color{red} [Keep?] #1}}
+\newcommand{\narratage}[1]{{\color{blue} [Pang Bai] #1}}
 \newcommand{\comment}[1]{{\color{Green} [Comment] #1}}
-
+\newcommand{\proglang}[1]{\textbf{#1}}
 
 
 \begin{document}
@@ -88,12 +89,12 @@
     \textbf{Languages and Tools} 
     & Python, C/C++, Fortran, Mathematica, Matlab, Markdown, \LaTeX, Git, Docker \\
     \textbf{Web Development}
-    & Javascript, HTML, CSS, MySQL, React, Firebase \\
-    \textbf{Quantitative Research} 
+    & Javascript, HTML, CSS, MySQL, React, React Native, Firebase \\
+    \textbf{Numerical Research} 
     & Data Visualization, Parallel Computing, Monte Carlo Simulation, \\
-    & Non-linear Regression, Machine Learning Classification \\
+    & Non-linear Regression, Classification \\
     \textbf{Miscellaneous} 
-    & Video Editing, Image Processing, Photography
+    & Photography, Video Editing, Image Processing
 \end{tabular}
 
 
@@ -102,17 +103,16 @@
 \textbf{University of California San Diego} \hfill La Jolla, CA \\
 Research Assistent \hfill Dec 2019 -- Present \\
 \begin{zitemize}
-    \item Reproduced the recent forecast of primordial non-Gaussianities with the input from the kinetic Sunyaev Zel'dovich (kSZ) effect on future Cosmic Microwave Background (CMB) and Large Scale Structure (LSS) surveys, despite problems and misleading contents from the literature. Aiming to improve the forecast by adding scale dependent bias and more realistic modeling such as multiple redshift binning, including bulk flows, and considering redshift space distortions, etc.
-    \item Forecasted the experimental sensitivities of cosmological parameters from future surveys about the CMB and LSS. Initiated clean code reusable for future fisher matrix forecasting projects. 
-    \item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. Reached the best accuracy so far by doing the exact integral instead of approximations. To tackle the five dimensional integral, Mathematica was used to get the analytic result of one dimension, leaving the rest four done numerically. Numba was used to speed up the already parallel Python code by more than 100X, saving computation time as well as cost on the cluster. Work published on JCAP.
-    \item Calculated the neutrino dominated phase shift in the CMB anisotropy spectrum. \keepornot{Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.} \comment{Don't know how to explain this project.}
+    \item Numerically forecasted the sensitivities of future CMB/LSS surveys, in terms of the primordial non-Gaussianities and the cosmological parameters, with the Fisher matrix method. Innovations including taking the SZ effect into consideration, and adopting the multi-tracer scale dependent bias, which greatly reduces the uncertainties. Codes were written in \proglang{Jupyter notebooks}. Figures were plotted with \proglang{Matplotlib} and \proglang{Plotly}.
+    \item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. By far the most accurate results, for doing the calculation exactly without approximations. To tackle the five dimensional integral, \proglang{Mathematica} was used to get the analytic result of one dimension, leaving the rest four done numerically. \proglang{Numba} was used to speed up the already parallel \proglang{Python} code by another 100X. Work published on JCAP.
+    \item Calculated the CMB anisotropy phase shift in a neutrino dominated universe. \narratage{(Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.)} Computation done with \proglang{Mathematica} and \proglang{Python}.
 \end{zitemize}
 
 \textbf{University of California Santa Barbara} \hfill Isla Vista, CA \\
 Student Researcher \hfill Sep 2015 -- Jun 2017 \\
 \begin{zitemize}
     \item Measured the gas kinematics and thermal behaviors of 28 galaxy mergers of redshift 0.1 with the package I developed. Found that most of them (25) are blowing gas away, and only few (3) are inhaling, confirming theoretical predictions. Presented on UCSB undergraduate symposium and Worster Symposium.
-    \item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for telescope images. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation, by infering syntax from bash, tcsh, C, etc. Reduced the work of repeating the same procedure hundreds of times by writing C programs and shell scripts to auto-locate the targets and run the measurement scripts automatically.
+    \item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for telescope images. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation, by infering syntax from bash, tcsh, C, etc. Reduced the work of repeating the same procedure hundreds of times by writing \proglang{C} programs and \proglang{shell} scripts to auto-locate the targets and run the measurement scripts automatically.
 \end{zitemize}
 
 
@@ -125,10 +125,10 @@ Notable courses:
 \begin{zitemize}
     \item TA of Computational Physics I: Probabilistic Models and Simulations. \\
     Simulated galaxy collisions with 1 million particles, exported into videos. \\
-    Taught N-body simulation algorithms from $O(N^2)$, $O(NlogN)$ to $O(N)$ to students.
+    Taught N-body simulation algorithms from $O(N^2)$ to $O(N)$ to students.
     \item TA of Computational Physics II: PDE and Matrix Models. \\
     Simulated various quantum experiments on classical computers using the path integral formulation.
-    \item Lectured on data visualization and matrix operations using Jupyter notebook.
+    \item Lectured on data visualization and matrix operations using \proglang{Jupyter notebook}.
     \item Reviewed as ``Excellent'' by the instructor.
 \end{zitemize}
 
@@ -138,34 +138,34 @@ Notable courses:
 
 \textbf{Web Application -- Personal Task Management System} \hfill Apr 2022 -- May 2022 \\
 \begin{zitemize}
-    \item Developed a Progressive Web App for personal task tracking purpose.
-    \item Constructed Firestore database to store user tasks and built the login system with OAuth2.
-    \item Designed and built the frontend with React and Material UI to allow users edit and browse tasks, ranked by priority. Wrapped the website into PWA, which can be installed on Desktop and Mobile devices.
-    \item Users can take notes and set time, deadline and repeat for individual tasks. Can also access settings like switching to dark mode.
-    \item Continuously integrating more features with a calender system.
+    \item Developed a Progressive Web App for personalized task tracking purpose. Works on Web/Mobile/Desktop.
+    \item Using \proglang{Firestore}, a no-SQL database, to store user data and built the login system with OAuth2.
+    \item Designed and built the frontend with \proglang{React} and \proglang{Material UI} to allow users interact with tasks.
+    \item Users can take notes, set start time, deadline, repetition, prerequisites, and priority for individual tasks. System settings includes account, theme(light/dark), language(EN/CN).
+    \item Adding new features such as the calender, the wallet.
 \end{zitemize}
 
 \textbf{Scientific Calculation -- Package for Astronomical Spectrum Analysis} \hfill Sep 2015 -- Jun 2016 \\
 \begin{zitemize}
     \item Developed a package for rapid galactic spectrum analysis.
-    \item Incorporated the best of two worlds: Fortran for performance hungry computation and Python for user interface and data visualization. Used F2PY as the bridge between these two languages.
+    \item Incorporated the best of two worlds: \proglang{Fortran} for performance hungry computation and \proglang{Python} for user interface and data visualization. Used \proglang{F2PY} as the bridge between these two languages.
     \item Utilizing Levenberg-Marquardt algorithm for non-linear fitting, Markov chain Monte Carlo for error estimation, and with handy automation from the user interface, it helped speed up traditional spectrum fitting by more than 10X. 
     \item Well documented with user manual.
 \end{zitemize}
 
 
 
-\section{Projects That I Believe Is Not Worth Talking}
+\section{Projects That I Believe Is Not Worth Talking But Anyway}
 
 \textbf{Network -- Personal Cluster}
 \begin{zitemize}
-    \item Built a small cluster consisting of a macbook master and 3 PC workers. Connected via either OpenMP or Ray.
+    \item Built a small cluster consisting of a macbook master and 3 PC workers, 74 threads in total. Connected via either OpenMP or Ray.
     \item Networked by a soft router running Pfsense, with customized NAT and rules, connecting machines with LAN and virtual machines with OpenVPN.
 \end{zitemize}
 
 \textbf{Tool -- Bilibili Live Stream Recorder}
 \begin{zitemize}
-    \item Built a live stream recorder using Python. Ran on a server 24/7 and pushes email notifications on disk full.
+    \item Built a live stream recorder for bilibili.com using Python package urllib2. Ran on a remote server 24/7 and pushes email notifications on disk full.
 \end{zitemize}
 
 
