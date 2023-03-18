@@ -32,12 +32,16 @@
 \titlespacing*{\section}{0em}{0.5em}{0em} % margin left, top, bottom
 \titleformat{\section}{\color{darkblue} \scshape \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
 
+% remove page number
+\thispagestyle{empty}
+
 % custom commands
 \newcommand{\previousversion}[1]{{\color{gray} [Old Version] #1}}
-\newcommand{\keepornot}[1]{{\color{red} [Keep?] #1}}
+\newcommand{\todo}[1]{{\color{red} [Todo] #1}}
 \newcommand{\narratage}[1]{{\color{blue} [Pang Bai] #1}}
 \newcommand{\comment}[1]{{\color{Green} [Comment] #1}}
-\newcommand{\proglang}[1]{\textbf{#1}}
+\newcommand{\proglang}[1]{#1}
+% \newcommand{\proglang}[1]{\textbf{#1}}
 
 
 \begin{document}
@@ -45,7 +49,7 @@
 % profile
 \newcommand{\name}{Yi Guo}
 \newcommand{\phone}{(805)895-0554}
-\newcommand{\email}{yiguo@physics.ucsd.edu}
+\newcommand{\email}{yig053@ucsd.edu}
 \newcommand{\address}{3813 Camino Lindo, San Diego, CA, 92122}
 \newcommand{\github}{y1guo}
 \newcommand{\linkedin}{y1guo}
@@ -67,18 +71,16 @@
 \section{Education}
 
 \textbf{University of California, San Diego} \hfill La Jolla, CA \\
-\begin{tabular}{p{10em} p{20em}}
+\begin{tabular}{p{12em} p{20em}}
     \textit{Ph.D. Physics} 
     & Physics Excellence Award 
 \end{tabular}
 \hfill Sep 2018 -- Expected Jun 2023
 
 \textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
-\begin{tabular}{p{10em} p{20em}}
-    \textit{B.S. Physics}
-    & Academic Honors, Worster Fellowship \\
-    \textit{B.S. Mathematics}
-    &
+\begin{tabular}{p{12em} p{20em}}
+    \textit{B.S. Physics, Mathematics}
+    & Academic Honors, Worster Fellowship
 \end{tabular}
 \hfill Sep 2014 -- Jun 2018
 
@@ -87,49 +89,35 @@
 
 \begin{tabular}{p{10em} p{33em}}
     \textbf{Languages and Tools} 
-    & Python, C/C++, Fortran, Mathematica, Matlab, Markdown, \LaTeX, Git, Docker \\
+    & Python, Mathematica, C/C++, Fortran, \LaTeX, Jupyter, Pytorch, Git, Docker \\
     \textbf{Web Development}
-    & Javascript, HTML, CSS, MySQL, React, React Native, Firebase \\
+    & JS, HTML, CSS, React, React Native, Firebase, Gradio \\
     \textbf{Numerical Research} 
-    & Data Visualization, Parallel Computing, Monte Carlo Simulation, \\
-    & Non-linear Regression, Classification \\
-    \textbf{Miscellaneous} 
-    & Photography, Video Editing, Image Processing
+    & Data Visualization, Parallel/Distributed Computing, Monte Carlo, Regression \\
 \end{tabular}
 
 
 
-\section{Academic Research}
+\section{Experience}
 \textbf{University of California San Diego} \hfill La Jolla, CA \\
+Teaching Assistant \hfill Oct 2018 -- Present \\
+\begin{zitemize}
+    \item Computational Physics I/II: N-Body Simulation; Quantum Mechanics Simulation. \\
+    \item Reviewed as ``Excellent'' by the instructor.
+\end{zitemize}
+\vspace{-0.5em}
 Research Assistent \hfill Dec 2019 -- Present \\
 \begin{zitemize}
-    \item Numerically forecasted the sensitivities of future CMB/LSS surveys, in terms of the primordial non-Gaussianities and the cosmological parameters, with the Fisher matrix method. Innovations including taking the SZ effect into consideration, and adopting the multi-tracer scale dependent bias, which greatly reduces the uncertainties. Codes were written in \proglang{Jupyter notebooks}. Figures were plotted with \proglang{Matplotlib} and \proglang{Plotly}.
-    \item Calculated the constraints on the coupling strength between axions and standard model fermions, using tree level quantum field theory and modern cosmology. By far the most accurate results, for doing the calculation exactly without approximations. To tackle the five dimensional integral, \proglang{Mathematica} was used to get the analytic result of one dimension, leaving the rest four done numerically. \proglang{Numba} was used to speed up the already parallel \proglang{Python} code by another 100X. Work published on JCAP.
-    \item Calculated the CMB anisotropy phase shift in a neutrino dominated universe. \narratage{(Existing literature only focused on the photon dominated universe and expressed the phase shift as an expansion of the neutrino proportion, which should be trusted only when the neutrino proportion was small. On the contrary, I calculated in the neutrino dominated situation, and expressed the phase shift as an expansion of the photon proportion. It turned out that the approximation in current literature was only off by 5\%, so the work was not published.)} Computation done with \proglang{Mathematica} and \proglang{Python}.
+    \item Numerically forecasted the sensitivities of the primordial non-gaussianity for future LSS surveys. Innovated to include the kSZ effect, and adopt multi-tracer technique. \todo{As a result, greatly reduced the uncertainty by ???.}
+    \item Quantitatively analyzed the constraints on the coupling strength between axions and standard model fermions, with tree level quantum field theory and modern cosmology. Adopted \proglang{Numba} to speed up parallel \proglang{Python} by 100X. Work published on \textit{JCAP}.
+    \item Calculated the CMB anisotropy phase shift in neutrino dominated universe. Confirmed the series expansion from photon dominated universe is only off by 5\%.
 \end{zitemize}
 
 \textbf{University of California Santa Barbara} \hfill Isla Vista, CA \\
 Student Researcher \hfill Sep 2015 -- Jun 2017 \\
 \begin{zitemize}
-    \item Measured the gas kinematics and thermal behaviors of 28 galaxy mergers of redshift 0.1 with the package I developed. Found that most of them (25) are blowing gas away, and only few (3) are inhaling, confirming theoretical predictions. Presented on UCSB undergraduate symposium and Worster Symposium.
-    \item Measured the photometry of 52 galaxy mergers from raw data. Learnt how to reduce all kinds of noise for telescope images. Overcame the difficulty of learning IRAF, an old package with few or obsolete documentation, by infering syntax from bash, tcsh, C, etc. Reduced the work of repeating the same procedure hundreds of times by writing \proglang{C} programs and \proglang{shell} scripts to auto-locate the targets and run the measurement scripts automatically.
-\end{zitemize}
-
-
-
-\section{Work Experience}
-
-\textbf{University of California San Diego} \hfill La Jolla, CA \\
-Teaching Assistant \hfill Oct 2018 -- Present \\
-Notable courses:
-\begin{zitemize}
-    \item TA of Computational Physics I: Probabilistic Models and Simulations. \\
-    Simulated galaxy collisions with 1 million particles, exported into videos. \\
-    Taught N-body simulation algorithms from $O(N^2)$ to $O(N)$ to students.
-    \item TA of Computational Physics II: PDE and Matrix Models. \\
-    Simulated various quantum experiments on classical computers using the path integral formulation.
-    \item Lectured on data visualization and matrix operations using \proglang{Jupyter notebook}.
-    \item Reviewed as ``Excellent'' by the instructor.
+    \item Presented research of gas behavior in galaxy mergers on UCSB undergraduate symposium and Worster Symposium with 200 from UCSB in the audience.
+    \item Created package in \proglang{Python} and \proglang{Fortran} that speeds up spectrum fitting workflow by 10X. Created \proglang{C} codes and \proglang{SHELL} scripts to audo-locate galaxies and measure photometries.
 \end{zitemize}
 
 
@@ -138,46 +126,21 @@ Notable courses:
 
 \textbf{Web Application -- Personal Task Management System} \hfill Apr 2022 -- May 2022 \\
 \begin{zitemize}
-    \item Developed a Progressive Web App for personalized task tracking purpose. Works on Web/Mobile/Desktop.
-    \item Using \proglang{Firestore}, a no-SQL database, to store user data and built the login system with OAuth2.
-    \item Designed and built the frontend with \proglang{React} and \proglang{Material UI} to allow users interact with tasks.
-    \item Users can take notes, set start time, deadline, repetition, prerequisites, and priority for individual tasks. System settings includes account, theme(light/dark), language(EN/CN).
-    \item Adding new features such as the calender, the wallet.
+    \item Developing a voice assistant, with \proglang{Whisper} as speech recognition, fine-tuned \proglang{GPT-J} as language model and \proglang{VITS} as text-to-speech. Demo prototyped with \proglang{Gradio}.
+    \item Developed a Progressive Web App on \proglang{Firebase} for personal task tracking. Built with \proglang{React} and \proglang{Material UI}, using \proglang{no-SQL} database and \proglang{OAuth2} login. 
 \end{zitemize}
-
-\textbf{Scientific Calculation -- Package for Astronomical Spectrum Analysis} \hfill Sep 2015 -- Jun 2016 \\
-\begin{zitemize}
-    \item Developed a package for rapid galactic spectrum analysis.
-    \item Incorporated the best of two worlds: \proglang{Fortran} for performance hungry computation and \proglang{Python} for user interface and data visualization. Used \proglang{F2PY} as the bridge between these two languages.
-    \item Utilizing Levenberg-Marquardt algorithm for non-linear fitting, Markov chain Monte Carlo for error estimation, and with handy automation from the user interface, it helped speed up traditional spectrum fitting by more than 10X. 
-    \item Well documented with user manual.
-\end{zitemize}
-
-
-
-\section{Projects That I Believe Is Not Worth Talking But Anyway}
-
-\textbf{Network -- Personal Cluster}
-\begin{zitemize}
-    \item Built a small cluster consisting of a macbook master and 3 PC workers, 74 threads in total. Connected via either OpenMP or Ray.
-    \item Networked by a soft router running Pfsense, with customized NAT and rules, connecting machines with LAN and virtual machines with OpenVPN.
-\end{zitemize}
-
-\textbf{Tool -- Bilibili Live Stream Recorder}
-\begin{zitemize}
-    \item Built a live stream recorder for bilibili.com using Python package urllib2. Ran on a remote server 24/7 and pushes email notifications on disk full.
-\end{zitemize}
-
 
 
 \section{Publications}
+
+D.~Green, \textbf{Y.~Guo}, J.~Han and B.~Wallisch, (Forthcoming),
+``Light Fields during Inflation from Future Galaxy Surveys,''
 
 D.~Green, \textbf{Y.~Guo} and B.~Wallisch,
 ``Cosmological implications of axion-matter couplings,''
 In: \textit{JCAP} 02.02, p. 019 (2022)
 DOI: \href{https://iopscience.iop.org/article/10.1088/1475-7516/2022/02/019}{10.1088/1475-7516/2022/02/019}
 arXiv: \href{https://arxiv.org/abs/2109.12088?context=hep-ph}{2109.12088 [astro-ph.CO].}
-
 
 
 \end{document}
