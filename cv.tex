@@ -40,8 +40,8 @@
 \newcommand{\todo}[1]{{\color{red} [Todo] #1}}
 \newcommand{\narratage}[1]{{\color{blue} [Pang Bai] #1}}
 \newcommand{\comment}[1]{{\color{Green} [Comment] #1}}
-\newcommand{\proglang}[1]{#1}
-% \newcommand{\proglang}[1]{\textbf{#1}}
+% \newcommand{\proglang}[1]{#1}
+\newcommand{\proglang}[1]{\textbf{#1}}
 
 
 \begin{document}
@@ -50,7 +50,7 @@
 \newcommand{\name}{Yi Guo}
 \newcommand{\phone}{(805)895-0554}
 \newcommand{\email}{yig053@ucsd.edu}
-\newcommand{\address}{3813 Camino Lindo, San Diego, CA, 92122}
+\newcommand{\address}{43108 Calle Sagrada, Fremont, CA, 94539}
 \newcommand{\github}{y1guo}
 \newcommand{\linkedin}{y1guo}
 \newcommand{\website}{https://y1guo.github.io}
@@ -93,26 +93,35 @@
     \textbf{Web Development}
     & JavaScript, HTML, CSS, React, React Native, Firebase, Gradio \\
     \textbf{Data Science and ML} 
-    & Data Visualization, Parallel/Distributed Computing, Monte Carlo, Regression \\
-    & Neural Network, Natual Language Processing
+    & Data Visualization, Parallel/Distributed Computing, Monte Carlo Simulation \\
+    & Classification, Regression, Natual Language Processing
 \end{tabular}
 
 
 \section{Software Development Projects}
-\textbf{Machine Learning Application -- AI Voice Assistant} \hfill Feb 2023 -- Mar 2023 \\
+% \textbf{Auto-Transcribe} \hfill May 2023 -- Aug 2023 \\
+% \begin{zitemize}
+%     \item Developed a pipeline to automatically transcribe videos using \proglang{Demucs} for stem separation and 
+%     \proglang{Whisper} for speech recognition. Transcode and slice with \proglang{FFmpeg} and \proglang{torchaudio}.
+%     Developed a fontend with \proglang{Gradio} to search, preview and export sentence audios within 1 second.
+% \end{zitemize}
+
+\textbf{AI Voice Assistant} \hfill Feb 2023 -- Mar 2023 \\
 \begin{zitemize}
-    \item Developed a voice assistant using \proglang{Whisper} for speech recognition, fine-tuned \proglang{GPT-J} as a language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
+    \item Developed a voice assistant using \proglang{Whisper} for speech recognition, fine-tuned \proglang{GPT-J} as 
+    the language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
 \end{zitemize}
 
-\textbf{Web Application -- Personal Task Management System} \hfill Apr 2022 -- May 2022 \\
+\textbf{Task Tracker Web App} \hfill Apr 2022 -- May 2022 \\
 \begin{zitemize}
-    \item Built a Progressive Web App on \proglang{Firebase} for personal task tracking using \proglang{React} and \proglang{Material UI}. Implemented \proglang{NoSQL} database and \proglang{OAuth2} login.
+    \item Built a Progressive Web App on \proglang{Firebase} for personal task tracking using \proglang{React} and 
+    \proglang{Material UI}. Implemented \proglang{NoSQL} database and \proglang{OAuth2} login.
 \end{zitemize}
 
 
 \section{Experience}
 \textbf{University of California San Diego} \hfill La Jolla, CA \\
-\textit{Research Assistent} \hfill Dec 2019 -- Present \\
+\textit{Research Assistant} \hfill Dec 2019 -- Present \\
 \begin{zitemize}
     \item Developed cutting-edge numerical techniques to predict the sensitivities of primordial non-gaussianity for upcoming LSS surveys, incorporating the kSZ effect and utilizing a multi-tracer approach. This innovative method resulted in a remarkable reduction of uncertainty by an order of magnitude for future surveys.
     \item Quantitatively analyzed the constraints on the coupling strength between axions and standard model fermions using tree level quantum field theory and modern cosmology. Adopted \proglang{Numba} to speed up parallel \proglang{Python} by 100X. Work published on \textit{JCAP}.
