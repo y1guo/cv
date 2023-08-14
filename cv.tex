@@ -21,8 +21,8 @@
 % tighter spacing than itemize
 \setlist[itemize]{align=parleft,left=0pt..1em}
 \newenvironment{zitemize}{
-\begin{itemize} \vspace{-.9em}\itemsep 0pt \parskip 0pt}
-{\end{itemize}\vspace{-.5em}}
+\begin{itemize} \vspace{-.8em}\itemsep 0pt \parskip 0pt}
+{\end{itemize}\vspace{-.7em}}
 
 % set table left padding to 0
 \setlength{\tabcolsep}{0pt}
@@ -40,8 +40,8 @@
 \newcommand{\todo}[1]{{\color{red} [Todo] #1}}
 \newcommand{\narratage}[1]{{\color{blue} [Pang Bai] #1}}
 \newcommand{\comment}[1]{{\color{Green} [Comment] #1}}
-% \newcommand{\proglang}[1]{#1}
-\newcommand{\proglang}[1]{\textbf{#1}}
+\newcommand{\proglang}[1]{#1}
+% \newcommand{\proglang}[1]{\textbf{#1}}
 
 
 \begin{document}
@@ -89,7 +89,7 @@
 
 \begin{tabular}{p{10em} p{33em}}
     \textbf{Languages and Tools} 
-    & Python, R, Mathematica, C/C++, Fortran, \LaTeX, Pytorch, TensorFlow, Git, Docker \\
+    & Python, C/C++, Fortran, Mathematica, \LaTeX, PyTorch, TensorFlow, Git, Docker \\
     \textbf{Web Development}
     & JavaScript, HTML, CSS, React, React Native, Firebase, Gradio \\
     \textbf{Data Science and ML} 
@@ -99,46 +99,47 @@
 
 
 \section{Software Development Projects}
-% \textbf{Auto-Transcribe} \hfill May 2023 -- Aug 2023 \\
-% \begin{zitemize}
-%     \item Developed a pipeline to automatically transcribe videos using \proglang{Demucs} for stem separation and 
-%     \proglang{Whisper} for speech recognition. Transcode and slice with \proglang{FFmpeg} and \proglang{torchaudio}.
-%     Developed a fontend with \proglang{Gradio} to search, preview and export sentence audios within 1 second.
-% \end{zitemize}
-
-\textbf{AI Voice Assistant} \hfill Feb 2023 -- Mar 2023 \\
+\textbf{Auto-Transcribe (PyTorch, FFmpeg, Gradio)} \hfill May 2023 -- Aug 2023 \\
 \begin{zitemize}
-    \item Developed a voice assistant using \proglang{Whisper} for speech recognition, fine-tuned \proglang{GPT-J} as 
-    the language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
+    \item Created a software to automatically transcribe videos, including stem separation and speech recognition. 30X realtime speed, with 85\% accuracy. No comparative products on the market.
+    \item Implemented a front-end with \proglang{Gradio} to search, preview and export audios among 10M sentences within 1s.
+    \item Designed for 24/7 robustness, with parallel computing, error handling and multi-GPU support.
 \end{zitemize}
 
-\textbf{Task Tracker Web App} \hfill Apr 2022 -- May 2022 \\
+\textbf{Voice Chatbot (PyTorch, LLM, Gradio)} \hfill Feb 2023 -- Mar 2023 \\
 \begin{zitemize}
-    \item Built a Progressive Web App on \proglang{Firebase} for personal task tracking using \proglang{React} and 
-    \proglang{Material UI}. Implemented \proglang{NoSQL} database and \proglang{OAuth2} login.
+    \item Developed a chatbot using \proglang{Whisper} for speech recognition, \proglang{GPT-J} as language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
+    \item Improved performance of the language model and allow multiple personalities by few-shot learning.
+\end{zitemize}
+
+\textbf{Task Tracker App (JavaScript, React, SQL)} \hfill Apr 2022 -- May 2022 \\
+\begin{zitemize}
+    \item Developed a multi-user Task Tracker App from end to end. Deployed on \proglang{Google Cloud}.
+    % \item Designed with \proglang{Material UI}. Adopted \proglang{OAuth2} login system. User data stored in \proglang{Firestore} (\proglang{NoSQL} database).
+    \item Used by 20+ family members, friends and colleagues.
 \end{zitemize}
 
 
-\section{Experience}
-\textbf{University of California San Diego} \hfill La Jolla, CA \\
-\textit{Research Assistant} \hfill Dec 2019 -- Present \\
+\section{Selected Research Projects}
+\textbf{Cosmological Parameters Forecast (HPC, Python, Parallel, Distributed)} \hfill Jan. 2022 -- Present \\
 \begin{zitemize}
-    \item Developed cutting-edge numerical techniques to predict the sensitivities of primordial non-gaussianity for upcoming LSS surveys, incorporating the kSZ effect and utilizing a multi-tracer approach. This innovative method resulted in a remarkable reduction of uncertainty by an order of magnitude for future surveys.
-    \item Quantitatively analyzed the constraints on the coupling strength between axions and standard model fermions using tree level quantum field theory and modern cosmology. Adopted \proglang{Numba} to speed up parallel \proglang{Python} by 100X. Work published on \textit{JCAP}.
-    \item Calculated the CMB anisotropy phase shift in a neutrino-dominated universe, confirming the series expansion approximation from the photon-dominated scenario is only off by 5\%.
-\end{zitemize}
-\vspace{-0.5em}
-\textit{Teaching Assistant} \hfill Oct 2018 -- Present \\
-\begin{zitemize}
-    \item Computational Physics I / II: N-Body Simulation; Quantum Mechanics Simulation. \\
-    \item Reviewed as ``Excellent'' TA by the instructor.
+    \item Developed high performance code to predict $f_{\rm NL}$ for various surveys, guiding future LSS survey design.
+    \item Optimized the performance to be 10X-100X faster than commonly used packages (e.g. FishLSS).
+    \item Increased the sensitivity by $\sim$10X with cutting-edge physics techniques.
 \end{zitemize}
 
-\textbf{University of California Santa Barbara} \hfill Isla Vista, CA \\
-\textit{Undergraduate Researcher} \hfill Sep 2015 -- Jun 2017 \\
+\textbf{Standard Model with Axion (HPC, Python, Parallel, Distributed)} \hfill Dec 2020 -- Jan. 2022 \\
 \begin{zitemize}
-    \item Presented research on gas behavior in galaxy mergers at UCSB undergraduate symposium and Worster symposium with an audience of 200 faculty and students.
-    \item Developed a software package in \proglang{Python} and \proglang{Fortran} that improved the spectrum fitting workflow by 10X. Created \proglang{C} codes and \proglang{Shell} scripts to auto-locate galaxies and measure photometries.
+    \item Analyzed the thermal history between axions and Standard Model fermions using quantum field theory. 
+    \item Gained SOTA constraints by explicitly solving the Boltzmann equation with 6-dimensional integral.
+    \item Speeded up native \proglang{Python} by 100X with \proglang{Numba}. Another 50X from distributed computing with \proglang{Ray}.
+\end{zitemize}
+
+\textbf{Spectroscopy and Photometry (ML, Python, C/C++, Fortran, Shell)} \hfill Sep 2015 -- Jun 2017 \\
+\begin{zitemize}
+    \item Developed a package for rapid spectrum fitting using least squares regression with LMA optimization.
+    \item Combined a \proglang{Python} UI for graphics and automation, and a \proglang{Fortran} kernel. Sped up the workflow by $>$10X. 
+    \item Created \proglang{C/C++} code and \proglang{Shell} scripts to locate galaxies from images and measure photometry automatically. Reduced time cost by 100X compared to traditional DS9 software.
 \end{zitemize}
 
 
@@ -155,3 +156,12 @@ arXiv: \href{https://arxiv.org/abs/2109.12088?context=hep-ph}{2109.12088 [astro-
 
 
 \end{document}
+
+% \vspace{-0.5em}
+% \textit{Teaching Assistant} \hfill Oct 2018 -- Present \\
+% \begin{zitemize}
+%     \item Computational Physics I / II: N-Body Simulation; Quantum Mechanics Simulation. \\
+%     \item Reviewed as ``Excellent'' TA by the instructor.
+% \end{zitemize}
+
+% \item Calculated the CMB anisotropy phase shift in a neutrino-dominated universe, confirming the series expansion approximation from the photon-dominated scenario is only off by 5\%.
