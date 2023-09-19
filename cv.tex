@@ -13,7 +13,30 @@
 
 % enables hyperlink and set link color
 \usepackage{hyperref} 
-\hypersetup{colorlinks=true, urlcolor=darkblue}
+\hypersetup{colorlinks=true, urlcolor=black}
+
+% external link icon
+\usepackage{tikz}
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.5ex, y=1.5ex, baseline=0ex, color=darkblue]{% 
+        \begin{scope}[x=1.3ex, y=1.3ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 1, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 1] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 1] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
 
 % enables itemize
 \usepackage[inline]{enumitem}
@@ -29,8 +52,8 @@
 
 % section formatting
 \usepackage[nostruts]{titlesec}
-\titlespacing*{\section}{0em}{0.5em}{0em} % margin left, top, bottom
-\titleformat{\section}{\color{darkblue} \scshape \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
+\titlespacing*{\section}{0em}{0em}{0em} % margin left, top, bottom
+\titleformat{\section}{\vspace{-0.2em}\color{darkblue} \scshape \large}{}{0em}{}[\vspace{-1.0em}\hrulefill\vspace{-0.2em}]
 
 % remove page number
 \thispagestyle{empty}
@@ -60,47 +83,52 @@
     \Huge \name \\
     \vspace{1pt}
     \small \phone 
-    $|$ \href{mailto:\email}{\underline{\email}} 
-    $|$ \address
+    $|$\email
+    $|$\address
     % $|$ \href{https://www.linkedin.com/in/\linkedin}{\underline{LinkedIn/\linkedin}} 
-    $|$ \href{https://github.com/\github}{\underline{GitHub/\github}} 
+    $|$\href{https://github.com/\github}{GitHub/\github}
     % $|$ \href{\website}{\underline{Home Page}}
-    \vspace{-15pt}
+    \vspace{-10pt}
 \end{center}
 
 
-\section{Education}
+% \section{Summary}
 
-\textbf{University of California, San Diego} \hfill La Jolla, CA \\
-\begin{tabular}{p{12em} p{20em}}
-    \textit{Ph.D. Physics} 
-    & Physics Excellence Award 
-\end{tabular}
-\hfill Sep 2018 -- Expected Sep 2023
-
-\textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
-\begin{tabular}{p{12em} p{20em}}
-    \textit{B.S. Physics, Mathematics}
-    & Academic Honors, Worster Fellowship
-\end{tabular}
-\hfill Sep 2014 -- Jun 2018
+% A passionate PhD candidate in Physics with strong quantitative and analytical skills in problem solving, \\
+% 9+ years of programming techniques, and hands-on experience in data science and machine learning algorithms.
 
 
+\vspace{-0.9em}
 \section{Skills}
+\vspace{0.3em}
 
 \begin{tabular}{p{10em} p{33em}}
     \textbf{Languages and Tools} 
     & Python, C/C++, Fortran, Mathematica, \LaTeX, PyTorch, TensorFlow, Git, Docker \\
+    \textbf{Machine Learning}
+    & Transformers, CNNs, GANs, VAEs, Diffusion Models, NLP, Speech Recognition \\
+    \textbf{Data Science} 
+    & Data Visualization, Monte Carlo Simulation, Parallel/Distributed Computing \\
     \textbf{Web Development}
     & JavaScript, HTML, CSS, React, React Native, Firebase, Gradio \\
-    \textbf{Data Science and ML} 
-    & Data Visualization, Parallel/Distributed Computing, Monte Carlo Simulation \\
-    & Classification, Regression, Natual Language Processing
 \end{tabular}
 
 
+\vspace{0.1em}
 \section{Software Development Projects}
-\textbf{Auto-Transcribe (PyTorch, FFmpeg, Gradio)} \hfill May 2023 -- Aug 2023 \\
+
+\textbf{\href{https://github.com/Shaunwei/RealChar}{RealChar.ai, 5K+ Stars (PyTorch, React, Google Cloud Platform) \ExternalLink}} \hfill Aug 2023 -- Present \\
+\begin{zitemize}
+    \item Designed and implemented the latency monitoring feature for the backend.
+
+    \item Integrated local speech-to-text solution. Reduced realtime dialogue latency by 8X.
+
+    \item Developed dedicated endpoint for the speech-to-text API. Containerized and deployed on GCP kubernetes.
+  
+    \item Collaborated closely with the core developer team and engaged in code reviews.
+\end{zitemize}
+
+\textbf{\href{https://github.com/y1guo/auto-transcribe}{Auto-Transcribe (PyTorch, Speech Recognition, Multiprocessing) \ExternalLink}} \hfill May 2023 -- Aug 2023 \\
 \begin{zitemize}
     \item Created a software to automatically transcribe videos, including stem separation and speech recognition. 30X real-time speed each GPU with 85\% accuracy. No comparative products on the market.
     \item Implemented a front-end with \proglang{Gradio} to search, preview and export audios among 10M sentences within 1 sec.
@@ -108,13 +136,13 @@
     \item Utilized to produce video content, resulting in a channel with 550K+ views and 1.2K+ engaged subscribers.
 \end{zitemize}
 
-\textbf{Voice Chatbot (PyTorch, LLM, Gradio)} \hfill Feb 2023 -- Mar 2023 \\
+\textbf{\href{https://github.com/y1guo/chatbot}{Voice Chatbot (PyTorch, LLM) \ExternalLink}} \hfill Feb 2023 -- Mar 2023 \\
 \begin{zitemize}
     \item Developed a chatbot using \proglang{Whisper} for speech recognition, \proglang{GPT-J} as language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
     \item Improved the performance of the language model and allowed multiple personalities by few-shot learning.
 \end{zitemize}
 
-\textbf{Task Tracker App (JavaScript, React, SQL)} \hfill Apr 2022 -- May 2022 \\
+\textbf{\href{https://github.com/y1guo/system}{Task Tracker App (HTML, JavaScript, React) \ExternalLink}} \hfill Apr 2022 -- May 2022 \\
 \begin{zitemize}
     \item Developed a multi-user Task Tracker App from end to end. Deployed on \proglang{Google Cloud Platform}.
     % \item Designed with \proglang{Material UI}. Adopted \proglang{OAuth2} login system. User data stored in \proglang{Firestore} (\proglang{NoSQL} database).
@@ -122,18 +150,19 @@
 \end{zitemize}
 
 
-\section{Selected Research Projects}
-\textbf{Cosmological Parameters Forecast (HPC, Python, Parallel, Distributed)} \hfill Jan. 2022 -- Present \\
+\section{Research Projects}
+
+\textbf{Cosmological Parameters Forecast (HPC, Python, Parallel/Distributed)} \hfill Jan. 2022 -- Present \\
 \begin{zitemize}
     \item Developed high performance code to predict $f_{\rm NL}$ for various surveys, guiding future LSS survey design.
     \item Optimized the performance to be 10X-100X faster than commonly used packages (e.g. FishLSS).
     \item Increased the sensitivity by $\sim$10X with cutting-edge physics techniques.
 \end{zitemize}
 
-\textbf{Standard Model with Axion (HPC, Python, Parallel, Distributed)} \hfill Dec 2020 -- Jan. 2022 \\
+\textbf{Standard Model with Axion (HPC, Python, Parallel/Distributed)} \hfill Dec 2020 -- Jan. 2022 \\
 \begin{zitemize}
     \item Analyzed the thermal history between axions and Standard Model fermions using quantum field theory. 
-    \item Gained SOTA constraints by explicitly solving the Boltzmann equation with 6-dimensional integral.
+    \item Gained the best constraints by explicitly solving the Boltzmann equation with 6-dimensional integral.
     \item Speeded up native \proglang{Python} by 100X with \proglang{Numba}. Another 50X from distributed computing with \proglang{Ray}.
 \end{zitemize}
 
@@ -143,6 +172,23 @@
     \item Combined a \proglang{Python} UI for graphics and automation, and a \proglang{Fortran} kernel. Sped up the workflow by $>$10X. 
     \item Created \proglang{C/C++} code and \proglang{Shell} scripts to locate galaxies from images and measure photometry automatically. Reduced time cost by 100X compared to using traditional DS9 software.
 \end{zitemize}
+
+
+\section{Education}
+
+\textbf{University of California, San Diego} \hfill La Jolla, CA \\
+\begin{tabular}{p{12em} p{20em}}
+    \textit{Ph.D. Physics} 
+    & Physics Excellence Award 
+\end{tabular}
+\hfill Sep 2018 -- Present
+
+\textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
+\begin{tabular}{p{12em} p{20em}}
+    \textit{B.S. Physics, Mathematics}
+    & Academic Honors, Worster Fellowship
+\end{tabular}
+\hfill Sep 2014 -- Jun 2018
 
 
 \section{Publications}
