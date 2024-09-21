@@ -17,8 +17,8 @@
 
 % external link icon
 \usepackage{tikz}
-\newcommand{\ExternalLink}{%
-    \tikz[x=1.5ex, y=1.5ex, baseline=0ex, color=darkblue]{% 
+\newcommand{\ExternalLink}{
+    \tikz[x=1.5ex, y=1.5ex, baseline=0ex, color=darkblue]{
         \begin{scope}[x=1.3ex, y=1.3ex]
             \clip (-0.1,-0.1) 
                 --++ (-0, 1.2) 
@@ -35,8 +35,8 @@
             -- (1, 1);
         \path[draw, line width = 1] (0.6, 1) 
             -- (1, 1) -- (1, 0.6);
-        }
     }
+}
 
 % enables itemize
 \usepackage[inline]{enumitem}
@@ -102,75 +102,89 @@
 \section{Skills}
 \vspace{0.3em}
 
-\begin{tabular}{p{10em} p{33em}}
-    \textbf{Languages and Tools} 
-    & Python, C/C++, Fortran, Mathematica, \LaTeX, PyTorch, TensorFlow, Git, Docker \\
-    \textbf{Machine Learning}
-    & Transformers, CNNs, GANs, VAEs, Diffusion Models, NLP, Speech Recognition \\
-    \textbf{Data Science} 
+\begin{tabular}{p{7em} p{38em}}
+    \textbf{Languages}
+    & Python, Next.js, React, Java, Rust, C/C++, Swift \\
+    \textbf{Dev Tools}
+    & GCP, Firebase, Redis, PostgreSQL, SQLite, Qdrant, Docker, K8s, Git, GitHub, Copilot \\
+    \textbf{APIs \& Deploy}
+    & OpenAI, Anthropic, Gemini, Deepgram, Cartesia, WhisperX, XTTS, Silero-vad, Llama3.1 \\
+    % \textbf{Machine Learning}
+    % & Transformers, CNNs, GANs, VAEs, Diffusion Models, NLP, ASR \\
+    \textbf{AI Skills}
+    & Embedding, RAG, Prompting, Few-shot Learning, Tool-use, NLP \\
+    \textbf{Data Science}
     & Data Visualization, Monte Carlo Simulation, Parallel/Distributed Computing \\
-    \textbf{Web Development}
-    & JavaScript, HTML, CSS, React, React Native, Firebase, Gradio \\
 \end{tabular}
 
 
 \vspace{0.1em}
-\section{Software Development Projects}
+\section{Software Development}
 
-\textbf{\href{https://github.com/Shaunwei/RealChar}{RealChar.ai, 5K+ Stars (PyTorch, React, Google Cloud Platform) \ExternalLink}} \hfill Aug 2023 -- Present \\
+\textbf{\href{https://heyrevia.ai/}{Revia (Python, React, GCP, Redis, PostgreSQL) \ExternalLink}} \hfill Jan 2024 -- Present \\
 \begin{zitemize}
-    \item Designed and implemented the latency monitoring feature for the backend.
-
-    \item Integrated local speech-to-text solution. Reduced realtime dialogue latency by 8X.
-
-    \item Developed dedicated endpoint for the speech-to-text API. Containerized and deployed on GCP kubernetes.
-  
-    \item Collaborated closely with the core developer team and engaged in code reviews.
+    \item Reduced voice chat e2e latency to an industry-leading 500ms by adopting the architecture of self-driving cars along with a multi-agent system with heavy caching.
+    \item Prototyped the MVP with Python, React, PostgreSQL, Firebase, Twilio and Agora.
+    \item Major contributor of the perception, prediction, control and planner modules.
+    \item Developed a websocket server for Agora Java SDK to communicate with the python backend.
+    \item Implemented restful APIs for businesses like making calls, loading replays, CRUD operations, etc.
 \end{zitemize}
 
-\textbf{\href{https://github.com/y1guo/auto-transcribe}{Auto-Transcribe (PyTorch, Speech Recognition, Multiprocessing) \ExternalLink}} \hfill May 2023 -- Aug 2023 \\
+\textbf{\href{https://rebyte.ai/}{Rebyte (Rust, React, GCP, Redis, PostgreSQL, Qdrant, RAG) \ExternalLink}} \hfill Nov 2023 -- Jan 2024 \\
 \begin{zitemize}
-    \item Created a software to automatically transcribe videos, including stem separation and speech recognition. 30X real-time speed each GPU with 85\% accuracy. No comparative products on the market.
-    \item Implemented a front-end with \proglang{Gradio} to search, preview and export audios among 10M sentences within 1 sec.
-    \item Designed for 24/7 robustness, with error handling and multi-GPU support. Transcribed 50TB within a month.
-    \item Utilized to produce video content, resulting in a channel with 550K+ views and 1.2K+ engaged subscribers.
-\end{zitemize}
-
-\textbf{\href{https://github.com/y1guo/chatbot}{Voice Chatbot (PyTorch, LLM) \ExternalLink}} \hfill Feb 2023 -- Mar 2023 \\
-\begin{zitemize}
-    \item Developed a chatbot using \proglang{Whisper} for speech recognition, \proglang{GPT-J} as language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
-    \item Improved the performance of the language model and allowed multiple personalities by few-shot learning.
-\end{zitemize}
-
-\textbf{\href{https://github.com/y1guo/system}{Task Tracker App (HTML, JavaScript, React) \ExternalLink}} \hfill Apr 2022 -- May 2022 \\
-\begin{zitemize}
-    \item Developed a multi-user Task Tracker App from end to end. Deployed on \proglang{Google Cloud Platform}.
-    % \item Designed with \proglang{Material UI}. Adopted \proglang{OAuth2} login system. User data stored in \proglang{Firestore} (\proglang{NoSQL} database).
-    \item Used by 10+ family members, friends and colleagues.
+    \item Investigated the latency bottleneck of the backend and located the root cause in the Deno sandbox.
+    \item Extended the list of supported LLM/Embedding providers, including corresponding tokenizers.
 \end{zitemize}
 
 
-\section{Research Projects}
-
-\textbf{Cosmological Parameters Forecast (HPC, Python, Parallel/Distributed)} \hfill Jan. 2022 -- Present \\
+\textbf{\href{https://github.com/Shaunwei/RealChar}{RealChar, 6K Stars (Python, React, GCP, RAG, WhisperX, XTTS, VAD) \ExternalLink}} \hfill Aug 2023 -- Dec 2023 \\
 \begin{zitemize}
-    \item Developed high performance code to predict $f_{\rm NL}$ for various surveys, guiding future LSS survey design.
-    \item Optimized the performance to be 10X-100X faster than commonly used packages (e.g. FishLSS).
-    \item Increased the sensitivity by $\sim$10X with cutting-edge physics techniques.
+    \item Major contributor for RAG, Phonecall mode, Meeting mode, Chat on pictures
+    \item Implemented restful API servers for WhisperX and XTTS. Containerized and deployed on GCE.
+    \item Reduced STT TTFT by 8X (vs faster-whisper) and TTS TTFB by 4X (vs ElevenLabs).
+    \item Built a server side VAD as a state machine based on Silero-vad and loudness. Bedrock for Phonecall mode.
 \end{zitemize}
 
-\textbf{Standard Model with Axion (HPC, Python, Parallel/Distributed)} \hfill Dec 2020 -- Jan. 2022 \\
+\textbf{\href{https://github.com/y1guo/auto-transcribe}{Auto-Transcribe (Python, Whisper, Demucs, Multi-process) \ExternalLink}} \hfill May 2023 -- Aug 2023 \\
 \begin{zitemize}
-    \item Analyzed the thermal history between axions and Standard Model fermions using quantum field theory. 
-    \item Gained the best constraints by explicitly solving the Boltzmann equation with 6-dimensional integral.
-    \item Speeded up native \proglang{Python} by 100X with \proglang{Numba}. Another 50X from distributed computing with \proglang{Ray}.
+    \item Created a software to automatically transcribe videos, including stem separation and speech recognition.
+    \item 30X real-time speed, 24/7 unattended transcription with alignment. No existing products on the market.
+    \item Built a WebUI to search for audio segments by transcript among 10M sentences within 1 sec.
+    \item 24/7 robustness, with crash recovery and multi-GPU support. Transcribed 50TB video within a month.
+    \item Used it to create video content, resulting in 680K+ views and 1.4K+ engaged subscribers.
+\end{zitemize}
+
+% \textbf{\href{https://github.com/y1guo/chatbot}{Voice Chatbot (PyTorch, LLM) \ExternalLink}} \hfill Feb 2023 -- Mar 2023 \\
+% \begin{zitemize}
+%     \item Developed a chatbot using \proglang{Whisper} for speech recognition, \proglang{GPT-J} as language model, and \proglang{VITS} for text-to-speech. Prototyped a demo with \proglang{Gradio}.
+%     \item Improved the performance of the language model and allowed multiple personalities by few-shot learning.
+% \end{zitemize}
+
+% \textbf{\href{https://github.com/y1guo/system}{Task Tracker App (HTML, JavaScript, React) \ExternalLink}} \hfill Apr 2022 -- May 2022 \\
+% \begin{zitemize}
+%     \item Developed a multi-user Task Tracker App from end to end. Deployed on \proglang{Google Cloud Platform}.
+%     % \item Designed with \proglang{Material UI}. Adopted \proglang{OAuth2} login system. User data stored in \proglang{Firestore} (\proglang{NoSQL} database).
+%     \item Used by 10+ family members, friends and colleagues.
+% \end{zitemize}
+
+
+\section{Research}
+
+\textbf{Cosmological Parameters Forecast (HPC, Python, Parallel/Distributed)} \hfill Jan 2022 -- Nov 2023 \\
+\begin{zitemize}
+    \item Developed high performance code computing $f_{\rm NL}$ $\sim$100X faster than popular packages (e.g. FishLSS).
+    \item Increased the forecasted sensitivity by $\sim$10X with cutting-edge physics techniques.
+\end{zitemize}
+
+\textbf{Standard Model with Axion (HPC, Python, Parallel/Distributed)} \hfill Dec 2020 -- Jan 2022 \\
+\begin{zitemize}
+    \item Gained the best constraints of axion-fermion interactions by computing the thermal history of early universe.
+    \item 100X sped up by compiling native \proglang{Python} into C. Another 50X by distributed computing with \proglang{Ray}.
 \end{zitemize}
 
 \textbf{Spectroscopy and Photometry (ML, Python, C/C++, Fortran, Shell)} \hfill Sep 2015 -- Jun 2017 \\
 \begin{zitemize}
-    \item Developed a package for rapid spectrum fitting using least squares regression with LMA optimization.
-    \item Combined a \proglang{Python} UI for graphics and automation, and a \proglang{Fortran} kernel. Sped up the workflow by $>$10X. 
-    \item Created \proglang{C/C++} code and \proglang{Shell} scripts to locate galaxies from images and measure photometry automatically. Reduced time cost by 100X compared to using traditional DS9 software.
+    \item Developed a spectrum fitting package (10X workflow speed up) and a galaxy photometry pipeline (100X).
 \end{zitemize}
 
 
@@ -181,7 +195,7 @@
     \textit{Ph.D. Physics} 
     & Physics Excellence Award 
 \end{tabular}
-\hfill Sep 2018 -- Present
+\hfill Sep 2018 -- Dec 2023
 
 \textbf{University of California, Santa Barbara} \hfill Isla Vista, CA \\
 \begin{tabular}{p{12em} p{20em}}
@@ -193,8 +207,11 @@
 
 \section{Publications}
 
-D.~Green, \textbf{Y.~Guo}, J.~Han and B.~Wallisch, (Forthcoming),
-``Light Fields during Inflation from Future Galaxy Surveys,''
+D.~Green, \textbf{Y.~Guo}, J.~Han and B.~Wallisch,
+``Light Fields during Inflation from BOSS and Future Galaxy Surveys,''
+In: \textit{JCAP} 05, p. 090 (2024)
+DOI: \href{https://iopscience.iop.org/article/10.1088/1475-7516/2024/05/090}{10.1088/1475-7516/2024/05/090}
+arXiv: \href{https://arxiv.org/abs/2311.04882}{2311.04882 [astro-ph.CO].}
 
 D.~Green, \textbf{Y.~Guo} and B.~Wallisch,
 ``Cosmological Implications of Axion-Matter Couplings,''
